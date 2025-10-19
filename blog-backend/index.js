@@ -18,10 +18,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Database connection
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/blog-system", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/blog-system",
+    {}
+  )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
